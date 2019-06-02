@@ -1,0 +1,365 @@
+{
+  "name": "RESTool sample app",
+  "errorMessageDataPath": "error",
+  "baseUrl":"http://127.0.0.1:3000",
+  "pages": [
+    {
+      "default": true,
+      "name": "Alunos",
+      "id": "alunos",
+      "description": "Cadastro de Alunos",
+      "methods": {
+        "getAll": {
+          "label": "Get Alunos",
+          "url": "/alunos",
+          "dataPath": null,
+          "display": {
+            "type": "table",
+            "fields": [
+              {
+                "name": "ra",
+                "type": "number",
+                "label": "R.A.",
+                "filterable": true
+              },
+              {
+                "name": "nome",
+                "type": "text",
+                "label": "Nome",
+                "filterable": true
+              },
+              {
+                "name": "dataNascimento",
+                "type": "date",
+                "label": "Data Nascimento",
+                "filterable": true
+              },
+              {
+                "name": "email",
+                "type": "email",
+                "label": "E-mail",
+                "filterable": true
+              }
+            ],
+            "sortBy": ["nome"]
+          }
+        },
+        "getSingle": {
+          "url": "/alunos/:_id",
+          "dataPath": null,
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/alunos",
+          "actualMethod": null,
+          "fields": [
+            {
+              "name": "_id",
+              "label": "id",
+              "type": "text"
+            },
+            {
+              "name": "ra",
+              "type": "number",
+              "label": "R.A.",
+              "required": true
+            },
+            {
+              "name": "nome",
+              "type": "text",
+              "label": "Nome",
+              "required": true
+            },
+            {
+              "name": "dataNascimento",
+              "type": "date",
+              "label": "Data Nascimento",
+              "required": true
+            },
+            {
+              "name": "email",
+              "type": "email",
+              "label": "E-mail"
+            }
+          ]
+        },
+        "post": {
+          "url": "/alunos",
+          "fields": [
+            {
+              "name": "ra",
+              "type": "number",
+              "label": "R.A.",
+              "required": true
+            },
+            {
+              "name": "nome",
+              "type": "text",
+              "label": "Nome",
+              "required": true
+            },
+            {
+              "name": "dataNascimento",
+              "type": "date",
+              "label": "Data Nascimento",
+              "required": true
+            },
+            {
+              "name": "email",
+              "type": "email",
+              "label": "E-mail"
+            }
+          ]
+        },
+        "delete": {
+          "url": "/alunos/:_id"
+        }
+      }
+    },
+    {
+      "default": true,
+      "name": "Disciplinas",
+      "id": "disciplinas",
+      "description": "Cadastro de Disciplinas",
+      "methods": {
+        "getAll": {
+          "label": "Get Disciplinas",
+          "url": "/disciplinas",
+          "dataPath": null,
+          "display": {
+            "type": "table",
+            "fields": [
+              {
+                "name": "nome",
+                "type": "text",
+                "label": "Matéria",
+                "filterable": true
+              },
+              {
+                "name": "professor",
+                "type": "text",
+                "label": "Professor",
+                "filterable": true
+              },
+              {
+                "name": "cargaHoraria",
+                "type": "number",
+                "label": "Carga Horária"
+              }
+            ],
+            "sortBy": ["nome"]
+          }
+        },
+        "getSingle": {
+          "url": "/disciplinas/:_id",
+          "dataPath": null,
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/disciplinas",
+          "actualMethod": null,
+          "fields": [
+            {
+              "name": "_id",
+              "label": "id",
+              "type": "text"
+            },
+            {
+              "name": "nome",
+              "type": "text",
+              "label": "Matéria",
+              "required": true
+            },
+            {
+              "name": "professor",
+              "type": "text",
+              "label": "Professor",
+              "required": true
+            },
+            {
+              "name": "cargaHoraria",
+              "type": "number",
+              "label": "Carga Horária",
+              "required": true
+            }
+          ]
+        },
+        "post": {
+          "url": "/disciplinas",
+          "fields": [
+            {
+              "name": "nome",
+              "type": "text",
+              "label": "Matéria",
+              "required": true
+            },
+            {
+              "name": "professor",
+              "type": "text",
+              "label": "Professor",
+              "required": true
+            },
+            {
+              "name": "cargaHoraria",
+              "type": "number",
+              "label": "Carga Horária",
+              "required": true
+            }
+          ]
+        },
+        "delete": {
+          "url": "/disciplinas/:_id"
+        }
+      }
+    },
+    {
+      "default": true,
+      "name": "Boletins",
+      "id": "boletins",
+      "description": "Cadastro de Boletins",
+      "methods": {
+        "getAll": {
+          "label": "Get Boletins",
+          "url": "/boletins",
+          "dataPath": null,
+          "display": {
+            "type": "table",
+            "fields": [
+              {
+                "name": "aluno",
+                "type": "object",
+                "label": "Aluno",
+                "filterable": true
+              },
+              {
+                "name": "disciplina",
+                "type": "object",
+                "label": "Disciplina",
+                "filterable": true
+              },
+              {
+                "name": "faltas",
+                "type": "number",
+                "label": "Faltas"
+              },
+              {
+                "name": "n1",
+                "type": "number",
+                "label": "N1"
+              },
+              {
+                "name": "n2",
+                "type": "number",
+                "label": "N2"
+              },
+              {
+                "name": "mf",
+                "type": "number",
+                "label": "Média Final"
+              },
+              {
+                "name": "status",
+                "type": "text",
+                "label": "Status"
+              },
+              {
+                "name": "created",
+                "type": "date",
+                "label": "Data"
+              }
+            ],
+            "sortBy": ["nome"]
+          }
+        },
+        "getSingle": {
+          "url": "/boletins/:_id",
+          "dataPath": null,
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/boletins",
+          "actualMethod": null,
+          "fields": [
+            {
+              "name": "_id",
+              "label": "id",
+              "type": "text"
+            },
+            {
+              "name": "aluno",
+              "type": "object",
+              "label": "Aluno",
+              "required": true
+            },
+            {
+              "name": "disciplina",
+              "type": "object",
+              "label": "Disciplina",
+              "required": true
+            },
+            {
+              "name": "faltas",
+              "type": "number",
+              "label": "Faltas",
+              "required": true
+            },
+            {
+              "name": "n1",
+              "type": "number",
+              "label": "N1",
+              "required": true
+            },
+            {
+              "name": "n2",
+              "type": "number",
+              "label": "N2",
+              "required": true
+            }
+          ]
+        },
+        "post": {
+          "url": "/boletins",
+          "fields": [
+            {
+              "name": "aluno.nome",
+              "type": "object",
+              "label": "Aluno",
+              "required": true
+            },
+            {
+              "name": "disciplina",
+              "type": "object",
+              "label": "Matéria",
+              "required": true
+            },
+            {
+              "name": "faltas",
+              "type": "number",
+              "label": "Faltas",
+              "required": true
+            },
+            {
+              "name": "n1",
+              "type": "number",
+              "label": "N1",
+              "required": true
+            },
+            {
+              "name": "n2",
+              "type": "number",
+              "label": "N2",
+              "required": true
+            }
+          ]
+        },
+        "delete": {
+          "url": "/boletins/:_id"
+        }
+      }
+    }
+  ]
+}
+
